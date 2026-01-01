@@ -11,6 +11,7 @@ async function startServer() {
         // Connect to DB first
 
         // Start server
+        const port = Number(process.env.PORT) || Number(env.PORT) || 8080;
         app.listen(env.PORT, async () => {
             console.log(`🚀 Server running at http://localhost:${env.PORT} in ${env.NODE_ENV} mode`);
             await connectDB(() => null);
